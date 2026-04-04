@@ -29,7 +29,7 @@ function Form(props) {
           <input
             id="noteTitle"
             type="text"
-            placeholder="Input title of your note"
+            placeholder="Input title of your post"
             name="noteTitle"
             className="border p-2 rounded shadow-sm text-sm md:text-md"
             value={title}
@@ -49,7 +49,7 @@ function Form(props) {
           </label>
           <textarea
             id="noteContent"
-            placeholder="Input your note"
+            placeholder="Input content of your post"
             name="noteContent"
             className="border p-2 rounded shadow-sm text-sm h-12 md:h-16 md:text-md"
             value={content}
