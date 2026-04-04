@@ -4,6 +4,7 @@ function Note(props) {
   function handleDelete() {
     props.onDelete(props.id);
   }
+
   return (
     <div className="border rounded flex flex-col bg-white">
       <div className="flex justify-between border-b border-gray-300">

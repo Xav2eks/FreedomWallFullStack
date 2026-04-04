@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import Note from "./Note";
 
 function NotesContainer(props) {
-  function deleteNote(id) {
-    props.setNotes((prevValue) => {
-      return prevValue.filter((noteItem, index) => {
-        return index !== id;
+  async function deleteNote(id) {
+    try {
+      await fetch(`http://localhost:5000/notes/${id}`, {
+        method: "DELETE",
       });
-    });
+
+      props.setNotes((prevValue) => {
+        return prevValue.filter((noteItem) => noteItem._id !== id);
+      });
+    } catch (err) {
+      console.error("Delete failed:", err);
+    }
   }
 
   return (
@@ -15,8 +21,8 @@ function NotesContainer(props) {
       {props.notes &&
         props.notes.map((noteItem, index) => (
           <Note
-            key={index}
-            id={index}
+            key={noteItem._id}
+            id={noteItem._id}
             title={noteItem.title}
             content={noteItem.content}
             onDelete={deleteNote}
