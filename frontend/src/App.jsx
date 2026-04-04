@@ -6,7 +6,7 @@ import NotesContainer from "./components/NotesContainer";
 
 function App() {
   const [notesArray, setNotesArray] = useState([]);
-  const API_URL = "http://localhost:5000/notes";
+  const API_URL = "https://fullstacknotesapp-ojsu.onrender.com/notes";
 
   useEffect(() => {
     fetch(API_URL)
