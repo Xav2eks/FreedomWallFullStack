@@ -9,21 +9,17 @@ function App() {
   const [notesArray, setNotesArray] = useState([]);
   const API_URL = "https://fullstacknotesapp-ojsu.onrender.com/notes";
 
-  // 2. Updated useEffect with Axios
   useEffect(() => {
     axios
       .get(API_URL)
       .then((response) => {
-        // Axios puts the data inside a .data property
         setNotesArray(response.data);
       })
       .catch((err) => console.error("Error fetching notes:", err));
   }, []);
 
-  // 3. Updated addNote with Axios
   async function addNote(newItem) {
     try {
-      // Axios POST is much cleaner: axios.post(url, data)
       const response = await axios.post(API_URL, newItem);
 
       const savedNote = response.data;
