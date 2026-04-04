@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios"; // 1. Import axios
 import "./App.css";
 import Header from "./components/Header";
 import Form from "./components/Form";
@@ -8,21 +9,24 @@ function App() {
   const [notesArray, setNotesArray] = useState([]);
   const API_URL = "https://fullstacknotesapp-ojsu.onrender.com/notes";
 
+  // 2. Updated useEffect with Axios
   useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => setNotesArray(data))
+    axios
+      .get(API_URL)
+      .then((response) => {
+        // Axios puts the data inside a .data property
+        setNotesArray(response.data);
+      })
       .catch((err) => console.error("Error fetching notes:", err));
   }, []);
 
+  // 3. Updated addNote with Axios
   async function addNote(newItem) {
     try {
-      const response = await fetch(API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newItem),
-      });
-      const savedNote = await response.json();
+      // Axios POST is much cleaner: axios.post(url, data)
+      const response = await axios.post(API_URL, newItem);
+
+      const savedNote = response.data;
 
       setNotesArray((prevNotes) => [
         ...prevNotes,
