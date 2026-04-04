@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios"; // 1. Import axios
+import axios from "axios";
 import "./App.css";
 import Header from "./components/Header";
 import Form from "./components/Form";
