@@ -24,7 +24,7 @@ function Form(props) {
             htmlFor="noteTitle"
             className="font-semibold mb-1 text-sm md:text-xl"
           >
-            Note Title:
+            Post Title:
           </label>
           <input
             id="noteTitle"
@@ -45,7 +45,7 @@ function Form(props) {
             htmlFor="noteContent"
             className="font-semibold mb-1 text-sm md:text-xl"
           >
-            Note Content:
+            Post Content:
           </label>
           <textarea
             id="noteContent"
@@ -64,7 +64,7 @@ function Form(props) {
           type="submit"
           className="bg-blue-500 text-white px-4 py-2 rounded text-sm hover:bg-blue-600 transition md:text-md"
         >
-          Save Note
+          Share Post
         </button>
       </div>
     </form>

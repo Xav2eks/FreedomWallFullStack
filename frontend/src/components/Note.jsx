@@ -21,10 +21,6 @@ function Note(props) {
       <p className="pt-4 pb-4 pr-4 pl-1 text-xs wrap-break-word md:text-xl">
         {props.content}
       </p>
-
-      <button className="text-xs border w-fit self-end p-px bg-green-300 hover:bg-white hover:text-green-300 transition-colors hover:cursor-pointer">
-        Update
-      </button>
     </div>
   );
 }
