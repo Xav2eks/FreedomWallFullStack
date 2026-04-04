@@ -4,7 +4,7 @@ import Note from "./Note";
 function NotesContainer(props) {
   async function deleteNote(id) {
     try {
-      await fetch(`http://localhost:5000/notes/${id}`, {
+      await fetch(`https://fullstacknotesapp-ojsu.onrender.com/notes/${id}`, {
         method: "DELETE",
       });
 
