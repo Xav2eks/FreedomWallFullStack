@@ -34,7 +34,7 @@ function App() {
   }
 
   return (
-    <div className="bg-[#FDFBD4] h-svh flex flex-col gap-2 md:gap-8">
+    <div className="bg-[#FDFBD4] min-h-screen flex flex-col gap-2 md:gap-8">
       <Header />
       <Form onAdd={addNote} />
       <NotesContainer notes={notesArray} setNotes={setNotesArray} />
